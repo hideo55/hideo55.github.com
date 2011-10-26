@@ -1,21 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <rel="stylesheet" type="text/css" href="css/main.css" />
-        <meta http-equiv="content-type" content="text/php; charset=utf-8" />
-
-        <title>hideo55's Github page</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-            </div>
-            <div class="menu">
-            </div>
-            <div class="body">
-				<h1>My Github Page</h1>
-            </div>
-        </div>
-    </body>
+	<head>
+		<title>hideo55's github page</title>
+		<meta http-equiv="content-type" content="text/php; charset=utf-8" />
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="static/css/style.css" type="text/css" />
+		<!--[if IE]>
+		<script type="text/javascript">
+		document.createElement('header');
+		document.createElement('section');
+		document.createElement('nav');
+		document.createElement('aside');
+		document.createElement('footer');
+		document.createElement('article');
+		</script>
+		<![endif]-->
+		<script type="text/javascript" src="static/js/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="static/js/repos.js"></script>
+		<script type="text/javascript" src="static/js/favicon.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>hideo55's github page</h1>
+			</div>
+			<div class="body">
+				<div id="aboutme">
+					<h2 class="maintitle">About me</h2>
+					<div>
+						<img src="static/images/my_icon.png">
+						<ul id="proflist">
+							<li>
+								<a target="_blank" class="favicon" href="http://d.hatena.ne.jp/hide_o_55/">Blog: WebService::Blog->new( user => ’hide_o_55’ )</a>
+							</li>
+							<li>
+								<a target="_blank" class="favicon" href="http://twitter.com/hide_o_55">Twitter</a>
+							</li>
+							<li>
+								<a target="_blank" class="favicon" href="http://github.com/hideo55/">Github</a>
+							</li>
+							<li>
+								<a target="_blank" class="favicon" href="http://search.cpan.org/~hideakio/">CPAN</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="projects" class="blocked-content">
+					<h2 class="maintitle">My Projects</h2>
+					<p>
+						My Projects hosted on github.
+					</p>
+					<div id="repo-list">
+						<ul id="my-repos"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
