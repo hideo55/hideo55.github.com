@@ -69,6 +69,6 @@ li a:hover, li a:active, h3 a:hover, li a:active {
 	text-shadow:1px 1px 1px #000000;
 }
 #header{ background-color: #7da5a6; }
-#projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; background-color: #ebf6f7;}
+#projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; background-color: #ebf6f7; clear: both }
 #logo { float: left }
-#proflist { float: left }
+#proflist { float:left }
