@@ -1,16 +1,11 @@
 @charset "utf-8"
 
-section, article, aside, hgroup, header, footer, nav, figure { display: block; }
-
 body {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
 }
 
 img {
 	border: none;
-}
-
-#content {
 }
 
 h1 {
@@ -73,7 +68,7 @@ li a:hover, li a:active, h3 a:hover, li a:active {
 	color:#ffffff;
 	text-shadow:1px 1px 1px #000000;
 }
-
-#projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; }
+#header{ background-color: #7da5a6; }
+#projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; background-color: #ebf6f7;}
 #logo { float: left }
 #proflist { float: left }
