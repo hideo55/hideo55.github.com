@@ -10,7 +10,8 @@ img {
 
 h1 {
     font-family: 'Verdana', 'Arial';
-    padding: 0.5em;  margin-top: 0; margin-bottom: 0;
+    padding: 10px;
+    margin-top: 0; margin-bottom: 0;
     background-color: #7da5a6;
     width: 800px;
 }
@@ -70,7 +71,7 @@ li a:hover, li a:active, h3 a:hover, li a:active {
 	color:#ffffff;
 	text-shadow:1px 1px 1px #000000;
 }
-#aboutme{ width: 800px; margin: 5px;padding: 5px; overflow: hidden; clear: both }
+#aboutme{ width: 800px; margin: 5px;padding: 5px; overflow: hidden; clear: both; border: 1px dotted gray; }
 #projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; background-color: #ebf6f7; clear: both }
 #logo { float: left; width: 96px; height: 96px }
 #proflist { float:left }
