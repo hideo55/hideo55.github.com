@@ -217,6 +217,5 @@ common::senseの例
 * use re '/xism';#flags mode
 * 自動で正規表現に'xsim'フラグが付与される
 
-
-
-
+おわり
+===
