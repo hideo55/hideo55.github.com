@@ -1,4 +1,4 @@
-@charset "utf-8"
+@charset "utf-8";
 
 body {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
@@ -9,34 +9,35 @@ img {
 }
 
 h1 {
-    font-family: 'Verdana', 'Arial';
-    padding: 10px;
-    margin-top: 0; margin-bottom: 0;
-    background-color: #7da5a6;
-    width: 800px;
+	font-family: 'Verdana', 'Arial';
+	padding: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #7da5a6;
+	width: 800px;
 }
 
 .subtitle {
-    background: transparent url(../images/allow-right-orange.png) no-repeat scroll 0%;
-    padding-left: 26px;
-    line-height: 26px;
-    text-decoration: underline;
+	background: transparent url(../images/allow-right-orange.png) no-repeat scroll 0%;
+	padding-left: 26px;
+	line-height: 26px;
+	text-decoration: underline;
 }
 
 .maintitle {
-    background: transparent url(../images/allow-right-green.png) no-repeat scroll 0%;
-    padding-left: 26px;
-    line-height: 26px;
-    text-decoration: underline;
+	background: transparent url(../images/allow-right-green.png) no-repeat scroll 0%;
+	padding-left: 26px;
+	line-height: 26px;
+	text-decoration: underline;
 }
 
 .blocked-content {
-    padding: 1em;
-    border: 1px dotted gray;
-    font-family: 'Verdana', 'Arial';
+	padding: 1em;
+	border: 1px dotted gray;
+	font-family: 'Verdana', 'Arial';
 }
 
-a{
+a {
 	color: #006699;
 	text-decoration: none;
 }
@@ -57,21 +58,41 @@ a:hover {
 }
 
 li a, h3 a {
-	padding-left:5px;
-	padding-right:5px;
-	background-color:none;
-	text-decoration:none;
+	padding-left: 5px;
+	padding-right: 5px;
+	/*background-color:none;*/
+	text-decoration: none;
 	color: #333333;
-	text-shadow:1px 1px 1px #ffffff;
+	text-shadow: 1px 1px 1px #ffffff;
 	line-height: 25px;
 }
 li a:hover, li a:active, h3 a:hover, li a:active {
-	background-color:#334d55;
-	text-decoration:none;
-	color:#ffffff;
-	text-shadow:1px 1px 1px #000000;
+	background-color: #334d55;
+	text-decoration: none;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000;
 }
-#aboutme{ width: 800px; margin: 5px;padding: 5px; overflow: hidden; clear: both; border: 1px dotted gray; }
-#projects { width: 800px; margin: 5px;padding: 5px; overflow: hidden; background-color: #ebf6f7; clear: both }
-#logo { float: left; width: 96px; height: 96px }
-#proflist { float:left }
+#aboutme {
+	width: 800px;
+	margin: 5px;
+	padding: 5px;
+	overflow: hidden;
+	clear: both;
+	border: 1px dotted gray;
+}
+#projects {
+	width: 800px;
+	margin: 5px;
+	padding: 5px;
+	overflow: hidden;
+	background-color: #ebf6f7;
+	clear: both
+}
+#logo {
+	float: left;
+	width: 96px;
+	height: 96px
+}
+#proflist {
+	float: left
+}
