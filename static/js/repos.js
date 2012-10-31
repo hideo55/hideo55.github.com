@@ -2,6 +2,7 @@ $(function() {
   var user = 'hideo55';
   $('#my-repos').html('<img src="static/images/ajax-loader.gif"/>');
   $.getJSON('https://api.github.com/users/' + user + '/repos?type=owner&sort=updated&callback=?', function(res) {
+    res.data.sort(function(a,b){ return b.watchers_count - a.watchers_count; });
     var buf = [];
     $.each(res.data, function(i, repo) {
       if (!repo.fork)
