@@ -2,11 +2,13 @@ $(function() {
   var user = 'hideo55';
   $('#my-repos').html('<img src="static/images/ajax-loader.gif"/>');
   $.getJSON('https://api.github.com/users/' + user + '/repos?type=owner&sort=updated&callback=?', function(res) {
-    res.data.sort(function(a,b){ return b.watchers_count - a.watchers_count; });
+    res.data.sort(function(a, b) {
+      return b.watchers_count - a.watchers_count;
+    });
     var buf = [];
     $.each(res.data, function(i, repo) {
       if (!repo.fork)
-        buf.push(['<div class="section" id="repo-' + repo.name + '">', '<section>', '<h3 class="subtitle"><a href="', repo.html_url, '">', repo.name, '</a></h3>', '<ul>', '<p class="description">', repo.description, '</p>', '<div class="commits" id="commit-' + repo.name + '"/>', '</ul>', '</section>', '</div>'].join(''));
+        buf.push(['<div class="section" id="repo-' + repo.name + '">', '<section>', '<h3 class="subtitle"><a href="', repo.html_url, '">', repo.name, '</a></h3>', '<ul>', '<p>Forks: ', repo.forks_count, ' Watchers: ', repo.watchers_count, '</p>', '<p class="description">', repo.description, '</p>', '</ul>', '</section>', '</div>'].join(''));
     });
     $('#my-repos').css('display', 'none').html(buf.join('')).show('slow');
   });
