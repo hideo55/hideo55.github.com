@@ -1,0 +1,41 @@
+-
+- @uzullaさん
+-- Apache Killerの
+- @hirobanex エアLT
+-- Qudoで学ぶTemplateMethodパターン
+- @kiku_h
+-- Johnny
+-- iPhoneアプリ
+--- 楽天から商品を検索してTwitterにアフィリエイトリンクつきで
+- @mgiken
+-- WebアプリでもBatch処理が必要なことが多い
+--- WADARE(Web Application Development and Runtime Enviroment)
+--- eponaでcron実行
+-- リバースプロキシ
+--- 負荷が高くなったらリバースプロキシのキャッシュ時間を動的に増やす
+-- GANC UP
+--- スポンサー募集中
+- @norry_gogo
+-- Amon2でTwitterアカウント
+- @umeyuki
+-- (名刺にグルメなプログラマって書いてたら)
+-- アンドロイド開発手伝うとこになった
+- @hisaichi
+-- カヤック
+-- Slug
+--- 名前とドキュメントが無いのがDISられた
+- @ono_pm
+-- Plackeでエアコンon/off
+-- 室温はCloudForecastで監視
+--- 赤外線学習リモコン
+---- FTDIドライバでシリアルポートに見える
+--- USB温度・湿度計モジュール
+---- Strawberry Linux USBRH
+--- 外出時にブラウザから操作
+- @okamuu
+-- Data Mining
+--- ピアソン相関
+--- 類似度を判定する
+- @makamaka_donzoko
+-- アイマスのOPの替え歌でPerlの応援歌
+
