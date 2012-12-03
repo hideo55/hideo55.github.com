@@ -49,10 +49,10 @@ Windows 8
 orz
 ---
 
-そもそも、Windowsもってねーよ
+Windows8なんてもってねーよ
 ---
 
-ぜひ使いたい
+しかし、「ぜひ使いたい」
 ---
 
 I would like to use your implementation
