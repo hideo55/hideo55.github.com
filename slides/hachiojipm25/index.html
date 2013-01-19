@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hachioji.om #25</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/mosho.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
+<body>
+<div id="mosho">
+<div id="title" class="mosho-slide" data-y="0" data-x="0">
+<h1>Hachioji.om #25</h1>
+
+<p>2013-01-19</p>
+
+</div>
+<div data-roty="90" class="mosho-slide" data-rotz="90" data-y="0" data-x="1200">
+<h2>About me</h2>
+
+<!-- data-rotz=90 -->
+
+<ul>
+<li>Hideaki Ohno
+<ul>
+<li>Twitter: @hide_o_55</li>
+<li>Hatena: id:hide_o_55</li>
+<li>github: hideo55</li>
+<li><a href="http://hideo55.github.com/">http://hideo55.github.com/</a></li>
+</ul></li>
+<li>Favorite Programing Language
+<ul>
+<li>Perl/C/C++/JavaScript</li>
+</ul></li>
+</ul>
+
+<!-- data-roty=90 -->
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="2400">
+<h2>さいきんやったこと</h2>
+
+<ul>
+<li>npmモジュールの最新版対応
+<ul>
+<li>uv_queue_work()のAPI変更対応 </li>
+<li>kytea </li>
+<li>murmurhash3</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="3600">
+<h2>テーマ</h2>
+
+<p>試験(テスト)</p>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="4800">
+<h2>Perlのテストでよくやってること</h2>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="0">
+<h2>Proveプラグイン</h2>
+
+<p>対サーバのテストでは、proveプラグインを使って、prove起動時にテスト用サーバを起動</p>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="1200">
+<h2>例：ArangoDB用のproveプラグイン</h2>
+
+<p><pre class="prettyprint">
+sub load {
+    ...
+    $ARANGODB = Test::TCP-&gt;new(
+        code =&gt; sub {
+            my $port = shift;
+            diag "Starting arangod on 127.0.0.1:$port";
+            my $dir = $TMP_DIR-&gt;dirname;
+            exec "arangod --server.endpoint tcp://127.0.0.1:$port $dir";
+        }
+    );
+    $ENV{TEST_ARANGODB_PORT} = $ARANGODB-&gt;port;
+    ...
+}
+</pre></p>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="2400">
+<h2>Build.PL</h2>
+
+<p><pre class="prettyprint">
+my $class = Module::Build-&gt;subclass( code  =&gt; &lt;&lt;'END_OF_CODE' );
+sub ACTION_test {
+    my $self = shift;
+    require App::Prove;
+    my $prove = App::Prove-&gt;new();
+    my @args = qw(--lib -Pt::lib::Prove::Plugin::StartArangoDB);
+    $prove-&gt;process_args(@args, @{$self-&gt;{properties}{test_files}});
+    $prove-&gt;run();
+}
+END_OF_CODE
+</pre></p>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="3600">
+<h2>その他</h2>
+
+<ul>
+<li>基本的にプレーンなTest::Moreでがんばる  </li>
+<li>no Test::Exception, use Test::Fatal:</li>
+<li>Test::Name::FromLine</li>
+<li>Test::Flatten</li>
+<li>Test::Attribute::AutoLevel</li>
+</ul>
+
+<hr />
+
+<p>だいたい、<a href="http://perl-users.jp/articles/advent-calendar/2011/test/">Advent Calendar</a>で出尽くしてる感</p>
+
+</div>
+
+</div>
+<script src="js/mosho.js"></script>
+<script type="text/javascript">
+mosho.plugin({
+  name: "scaleActiveSlide",
+  preShow: function (evt) {
+    prv = evt.detail.prevSlide;
+    nxt = evt.detail.nextSlide;
+    if (prv) { prv.scale(0.25) }
+    if (nxt) { nxt.scale(4) }
+  }
+});
+mosho.init();
+
+try{
+  window.addEventListener("load",prettyPrint,false);
+}catch(e){
+  window.attachEvent("onload",prettyPrint);
+}
+</script>
+</body>
+</html>
+
