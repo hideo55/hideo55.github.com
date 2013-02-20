@@ -5,7 +5,7 @@ $(function() {
     $('<img/>').attr({
     width: 16,
     height: 16,
-    src: dir + '/favicon.ico',
+    src: dir + 'favicon.ico',
     border: '0px'
     }).hide().css('vertical-align', 'baseline').one('load', function() { $(this).show().css('display', 'inline').prependTo(link)
     });
