@@ -1,4 +1,4 @@
-Hachioji.om #26
+Hachioji.pm #26
 ===
 
 2013-02-23
