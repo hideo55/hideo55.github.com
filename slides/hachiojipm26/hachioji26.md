@@ -24,8 +24,8 @@ Node.jsでも後読みがしたい！
 ---
 
 * 正規表現のlook-behind
-    * 肯定的後読み(?<=pattern)
-    * 否定的後読み(?<!pattern)
+    * 肯定的後読み(?&lt;=pattern)
+    * 否定的後読み(?&lt;!pattern)
 * ECMAScriptのRegExpに後読みがない
 
 そんなときは鬼車
