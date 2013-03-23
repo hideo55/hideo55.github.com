@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chiba.pm #2</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/mosho.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
+<body>
+<div id="mosho">
+<div id="title" class="mosho-slide" data-y="0" data-x="0">
+<h1>Chiba.pm #2</h1>
+
+<p>2013-03-23</p>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="1200">
+<h2>＼ﾁﾊﾞ／</h2>
+
+</div>
+<div data-roty="90" class="mosho-slide" data-rotz="90" data-y="0" data-x="2400">
+<h2>About me</h2>
+
+<!-- data-rotz=90 -->
+
+<ul>
+<li>Hideaki Ohno
+<ul>
+<li>Twitter: @hide_o_55</li>
+<li>Hatena: id:hide_o_55</li>
+<li>github: hideo55</li>
+<li><a href="http://hideo55.github.com/">http://hideo55.github.com/</a></li>
+</ul></li>
+<li>Favorite Programing Language
+<ul>
+<li>Perl/C/C++/JavaScript</li>
+</ul></li>
+</ul>
+
+<!-- data-roty=90 -->
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="3600">
+<h2>初めてXSモジュールをCPANに上げた話</h2>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="4800">
+<h2>XSとは？</h2>
+
+<ul>
+<li>PerlとC言語との拡張インタフェースを作るための仕組み</li>
+<li>主に以下のような用途で使われる
+<ul>
+<li>Cで書かれたライブラリのバインディング</li>
+<li>Perlだと遅い箇所をCで高速化</li>
+<li>Perlコードから触れないPerl内部のハック</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="0">
+<h2>XSって難しい？</h2>
+
+<ul>
+<li>C言語の読み書きが出来れば難しくない</li>
+<li>XS特有の作法を覚えるだけ</li>
+<li>Perl内部のハックの場合は当然Perl内部の知識が必要</li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="1200">
+<h2>今回作ったモジュール</h2>
+
+<ul>
+<li>Algorithm::HyperLoglog
+<ul>
+<li>HyperLogLogアルゴリズムの実装 </li>
+<li>ある集合内の異なりの数(cardinality)を省メモリで推定するアルゴリズム</li>
+<li>PurePerlでも動く</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="2400">
+<h2>M::B::Pluggable使ってみた</h2>
+
+<ul>
+<li>べんり！</li>
+<li>XSビルドのサポート
+<ul>
+<li>M::B::Pluggable::XSUtil</li>
+</ul></li>
+<li>cpanfile対応
+<ul>
+<li>M::B::Pluggable::CPANfile</li>
+</ul></li>
+<li>ただし、他にフックしたい箇所がある場合はDirty Hackの必要あり
+<ul>
+<li>M::B::Pluggableが既にM::B->subclassしているため</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="3600">
+<h2>参考にしたもの</h2>
+
+<ul>
+<li>perlxs, perlguts, perlapi</li>
+<li><a href="http://d.hatena.ne.jp/gfx/20100202/1265091606">XS基礎文法最速マスター</a></li>
+<li><a href="http://blog.wktk.co.jp/archives/331">Digest::BLAKE2作成で学ぶモダンPerl XSモジュール作成と、挫折</a></li>
+</ul>
+
+</div>
+
+</div>
+<script src="js/mosho.js"></script>
+<script type="text/javascript">
+mosho.plugin({
+  name: "scaleActiveSlide",
+  preShow: function (evt) {
+    prv = evt.detail.prevSlide;
+    nxt = evt.detail.nextSlide;
+    if (prv) { prv.scale(0.25) }
+    if (nxt) { nxt.scale(4) }
+  }
+});
+mosho.init();
+
+try{
+  window.addEventListener("load",prettyPrint,false);
+}catch(e){
+  window.attachEvent("onload",prettyPrint);
+}
+</script>
+</body>
+</html>
+
