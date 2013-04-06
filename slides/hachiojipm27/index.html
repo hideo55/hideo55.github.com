@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hachioji.pm #27</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/mosho.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
+<body>
+<div id="mosho">
+<div id="title" class="mosho-slide" data-y="0" data-x="0">
+<h1>Hachioji.pm #27</h1>
+
+<p>2013-04-06</p>
+
+</div>
+<div data-roty="90" class="mosho-slide" data-rotz="90" data-y="0" data-x="1200">
+<h2>About me</h2>
+
+<!-- data-rotz=90 -->
+
+<ul>
+<li>Hideaki Ohno
+<ul>
+<li>Twitter: @hide_o_55</li>
+<li>Hatena: id:hide_o_55</li>
+<li>github: hideo55</li>
+<li><a href="http://hideo55.github.com/">http://hideo55.github.com/</a></li>
+</ul></li>
+<li>Favorite Programing Language
+<ul>
+<li>Perl/C/C++/JavaScript</li>
+</ul></li>
+</ul>
+
+<!-- data-roty=90 -->
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="2400">
+<h2>XS期がきてる</h2>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="3600">
+<h2>Digest::SpookyHash</h2>
+
+<ul>
+<li>SpookyHashのC++実装のバインディング</li>
+<li>SpookyHash
+<ul>
+<li>Bob Jenkins </li>
+<li>128bitの非暗号論的ハッシュ</li>
+<li>キーが短い場合に非常に速い</li>
+</ul></li>
+<li>64bit Integerが使える環境のみ</li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="4800">
+<h2>Digest::SpookyHash</h2>
+
+<ul>
+<li>作る過程でM::B::Pluggable::XSUtilのバグ見つけてpull-reqした</li>
+<li>C++を使う場合はM::B::Pluggable::XSUtil-1.01をprereqに</li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="0">
+<h2>Algorithm::HyperLogLog</h2>
+
+<ul>
+<li>HyperLogLogアルゴリズムの実装 </li>
+<li>ある集合内の異なりの数(cardinality)を省メモリで推定するアルゴリズム
+<ul>
+<li>PurePerlでも動く</li>
+<li>MurmurHash3-32もPurePerlで実装</li>
+</ul></li>
+<li>CPAN Testersからfail report
+<ul>
+<li>PA-RISCの環境でXSとPPで結果が違う </li>
+<li>PA-RISCはビッグエンディアン</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="1200">
+<h2>原因はMurmurHash3</h2>
+
+<ul>
+<li>MurmurHash3のC実装がビッグエンディアンを想定していなかった</li>
+<li>調べたらMurmurHash3に限らず、MurmurHash、MurmurHash2もバイトオーダーを考慮しない実装
+<ul>
+<li>関数名に "_x86"ってつかてるから当然といえば当然 </li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="2400">
+<h2>ブログに書いた</h2>
+
+<p><a href="http://d.hatena.ne.jp/hide_o_55/20130403/1364917149">多くのMurmurHashの実装がバイトオーダーを考慮していない</a></p>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="3600">
+<h2>テスト環境作った</h2>
+
+<ul>
+<li>QEMU
+<ul>
+<li>SPARCとかPowerPCのエミュレーションができる</li>
+</ul></li>
+<li>Debian
+<ul>
+<li>多くのアーキテクチャをサポート</li>
+</ul></li>
+<li>Debian(Sqeeze) on QEMU(PowerPC)環境を構築
+<ul>
+<li>SPARCも試したけど、Sqeezeが上手く入らなかった </li>
+</ul></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="4800">
+<h2>対処</h2>
+
+<ul>
+<li>MururHash3のC実装でビッグエンディアンの場合はバイトオーダーを入れ替えるように変更</li>
+<li><a href="https://gist.github.com/hideo55/5325084">https://gist.github.com/hideo55/5325084</a></li>
+</ul>
+
+</div>
+<div class="mosho-slide" data-y="1600" data-x="0">
+<h2>今後も暫くXS期</h2>
+
+<ul>
+<li>あと3つくらいはCPANに上げられそう</li>
+</ul>
+
+</div>
+
+</div>
+<script src="js/mosho.js"></script>
+<script type="text/javascript">
+mosho.plugin({
+  name: "scaleActiveSlide",
+  preShow: function (evt) {
+    prv = evt.detail.prevSlide;
+    nxt = evt.detail.nextSlide;
+    if (prv) { prv.scale(0.25) }
+    if (nxt) { nxt.scale(4) }
+  }
+});
+mosho.init();
+
+try{
+  window.addEventListener("load",prettyPrint,false);
+}catch(e){
+  window.attachEvent("onload",prettyPrint);
+}
+</script>
+</body>
+</html>
+
