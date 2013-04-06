@@ -23,6 +23,8 @@ XS期がきてる
 Digest::SpookyHash
 ---
 
+<!-- data-roty=90 -->
+
 * SpookyHashのC++実装のバインディング
 * SpookyHash
 	* Bob Jenkins 
@@ -39,6 +41,8 @@ Digest::SpookyHash
 
 Algorithm::HyperLogLog
 ---
+
+<!-- data-rotz=90 -->
 
 * HyperLogLogアルゴリズムの実装 
 * ある集合内の異なりの数(cardinality)を省メモリで推定するアルゴリズム
@@ -75,4 +79,5 @@ Algorithm::HyperLogLog
 今後も暫くXS期
 ---
 
-* あと3つくらいはCPANに上げられそう
+<!-- data-roty=90 -->
+
