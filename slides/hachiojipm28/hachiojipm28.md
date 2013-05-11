@@ -27,7 +27,7 @@ About me
 
 * Algorithm::HyperLogLogでModule::Buildの--pureperl-only をサポート
 
-String::FuzzyHash
+Data::FuzzyHash
 ---
 
 * fuzzy hash
@@ -35,4 +35,5 @@ String::FuzzyHash
     * 類似した入力は類似したハッシュ値になる
     * ハッシュ値同士で類似度を計算できる
 * libfuzzyのバインディング
+* PHPでは組み込み関数
 
