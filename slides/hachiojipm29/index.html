@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hachioji.pm #29</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/mosho.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
+<body>
+<div id="mosho">
+<div data-x="0" class="mosho-slide" id="title" data-y="0">
+<h1>Hachioji.pm #29</h1>
+
+<p>2013-06-15</p>
+
+</div>
+<div data-y="0" class="mosho-slide" data-rotz="90" data-x="1200" data-roty="90">
+<h2>About me</h2>
+
+<!-- data-rotz=90 -->
+
+<ul>
+<li>Hideaki Ohno
+<ul>
+<li>Twitter: @hide_o_55</li>
+<li>Hatena: id:hide_o_55</li>
+<li>github: hideo55</li>
+<li><a href="http://hideo55.github.com/">http://hideo55.github.com/</a></li>
+</ul></li>
+<li>Favorite Programing Language
+<ul>
+<li>Perl/C/C++/JavaScript/Go</li>
+</ul></li>
+</ul>
+
+<!-- data-roty=90 -->
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="2400">
+<h2>さいきんやったこと</h2>
+
+</div>
+<div data-y="0" class="mosho-slide" data-x="3600" data-roty="90">
+<h2>Digest::MurmurHash3::<br>PurePerl</h2>
+
+<!-- data-roty=90 -->
+
+<ul>
+<li>Pure PerlでMurmurHash3</li>
+<li>32bit/128bitのハッシュ値に対応</li>
+<li><a href="https://metacpan.org/release/Digest-MurmurHash3-PurePerl">https://metacpan.org/release/Digest-MurmurHash3-PurePerl</a></li>
+</ul>
+
+</div>
+<div data-x="4800" data-y="0" class="mosho-slide">
+<h2>Pure Perl Tips</h2>
+
+<ul>
+<li>C言語ではint型で計算されている箇所をPerlで再現する際に、integerプラグマをよく使う</li>
+<li>use integer
+<ul>
+<li>演算子のオペランドと結果の扱いが変わる(関数には影響しない)</li>
+<li>整数の回り込み</li>
+<li>基本的に符号なし整数として扱われる</li>
+<li>ビット演算子では符号付き整数として扱われる</li>
+</ul></li>
+</ul>
+
+</div>
+<div data-y="800" class="mosho-slide" data-x="0">
+<h2>Pure Perl Tips</h2>
+
+<ul>
+<li>状況に応じて、use integer, no integerで演算結果を制御する</li>
+<li>Data::IntegerがPure Perlでの整数の扱い方の参考になる</li>
+</ul>
+
+</div>
+
+</div>
+<script src="js/mosho.js"></script>
+<script type="text/javascript">
+mosho.plugin({
+  name: "scaleActiveSlide",
+  preShow: function (evt) {
+    prv = evt.detail.prevSlide;
+    nxt = evt.detail.nextSlide;
+    if (prv) { prv.scale(0.25) }
+    if (nxt) { nxt.scale(4) }
+  }
+});
+mosho.init();
+
+try{
+  window.addEventListener("load",prettyPrint,false);
+}catch(e){
+  window.attachEvent("onload",prettyPrint);
+}
+</script>
+</body>
+</html>
+
