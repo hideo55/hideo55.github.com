@@ -57,7 +57,7 @@ Lexical subroutine
 my sub foo {
 	...
 }
-sub {bar {
+sub bar {
 	my $self = shift;
 	$self->foo(); #Can't locate object method
 }
