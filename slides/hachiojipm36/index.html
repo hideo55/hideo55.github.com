@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hachioji.pm #36</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/mosho.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
+<body>
+<div id="mosho">
+<div class="mosho-slide" data-x="0" data-y="0" id="title">
+<h1>Hachioji.pm #36</h1>
+
+<p>2013-12-21</p>
+
+</div>
+<div data-roty="90" data-y="0" data-x="1200" data-rotz="90" class="mosho-slide">
+<h2>About me</h2>
+
+<!-- data-rotz=90 -->
+
+<ul>
+<li>Hideaki Ohno
+<ul>
+<li>Twitter: @hide_o_55</li>
+<li>Hatena: id:hide_o_55</li>
+<li>github: hideo55</li>
+<li><a href="http://hideo55.github.com/">http://hideo55.github.com/</a></li>
+</ul></li>
+<li>Favorite Programing Language
+<ul>
+<li>Perl/C/C++/JavaScript/Go</li>
+</ul></li>
+</ul>
+
+<!-- data-roty=90 -->
+
+</div>
+<div class="mosho-slide" data-y="0" data-x="2400">
+<h2>Lexical subroutine</h2>
+
+</div>
+<div data-roty="90" data-y="0" data-x="3600" class="mosho-slide">
+<h2>Lexical subroutine</h2>
+
+<!-- data-roty=90 -->
+
+<ul>
+<li>perl 5.18で導入</li>
+<li>レキシカルスコープでのみ有効なサブルーチン</li>
+</ul>
+
+<p><pre class="prettyprint">
+my sub foo {
+    ...
+};
+</pre></p>
+
+</div>
+<div data-y="0" data-x="4800" class="mosho-slide">
+<h2>Lexical subroutine</h2>
+
+<p><pre class="prettyprint">
+package Foo;
+my sub bar {
+    ...
+}
+sub baz {
+    bar(); # OK
+}
+package main;
+Foo::bar(); =&gt; Undefined subroutine &amp;Foo::bar ...
+</pre></p>
+
+</div>
+<div class="mosho-slide" data-y="800" data-x="0">
+<h2>Lexical subroutine</h2>
+
+<p><pre class="prettyprint">
+my sub foo {
+    ...
+}
+sub {bar {
+    my $self = shift;
+    $self-&gt;foo(); #Can't locate object method
+}
+</pre></p>
+
+</div>
+<div data-x="1200" data-y="800" class="mosho-slide">
+<h2>Lexical subroutine</h2>
+
+<p><pre class="prettyprint">
+my sub foo {
+    ...
+}
+sub bar {
+    my $self = shift;
+    $self-&gt;${\\&amp;foo}();
+}
+</pre></p>
+
+</div>
+<div data-x="2400" data-y="800" class="mosho-slide">
+<h2>Lexical subroutine</h2>
+
+<p><pre class="prettyprint">
+my sub foo {
+    ...
+}
+sub bar {
+    my $self = shift;
+    my $coderef = \&amp;foo:
+    $self-&gt;$coderef();
+}
+</pre></p>
+
+</div>
+<div class="mosho-slide" data-x="3600" data-y="800">
+<h2>Class::Accessor::Lexical</h2>
+
+<p><pre class="prettyprint">
+use Class::Accessor::Lexical ( rw =&gt; [qw/foo bar baz/]);
+</pre></p>
+
+</div>
+<div class="mosho-slide" data-x="4800" data-y="800">
+<h2>Class::Accessor::Lexical</h2>
+
+<ul>
+<li>Exporter::Lexicalだとダメ
+<ul>
+<li>Bizarre copy of CODE in reference constructor</li>
+</ul></li>
+<li>XSで細工してクロージャが拘束してる変数を保持してやらないといけない</li>
+</ul>
+
+</div>
+
+</div>
+<script src="js/mosho.js"></script>
+<script type="text/javascript">
+mosho.plugin({
+  name: "scaleActiveSlide",
+  preShow: function (evt) {
+    prv = evt.detail.prevSlide;
+    nxt = evt.detail.nextSlide;
+    if (prv) { prv.scale(0.25) }
+    if (nxt) { nxt.scale(4) }
+  }
+});
+mosho.init();
+
+try{
+  window.addEventListener("load",prettyPrint,false);
+}catch(e){
+  window.attachEvent("onload",prettyPrint);
+}
+</script>
+</body>
+</html>
+
