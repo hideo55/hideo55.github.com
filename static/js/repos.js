@@ -8,7 +8,7 @@ $(function() {
     var buf = [];
     $.each(res.data, function(i, repo) {
       if (!repo.fork)
-        buf.push(['<div class="section" id="repo-' + repo.name + '">', '<section>', '<h3 class="subtitle"><a href="', repo.html_url, '">', repo.name, '</a></h3>', '<ul>', '<p>Forks: ', repo.forks_count, ' Watchers: ', repo.watchers_count, '</p>', '<p class="description">', repo.description, '</p>', '</ul>', '</section>', '</div>'].join(''));
+        buf.push(['<div class="section" id="repo-' + repo.name + '">', '<section>', '<h3 class="subtitle"><a href="', repo.html_url, '">', repo.name, '</a></h3>', '<ul>', '<p>Forks: ', repo.forks_count, ' Stargazers: ', repo.stargazers_count, '</p>', '<p class="description">', repo.description, '</p>', '</ul>', '</section>', '</div>'].join(''));
     });
     $('#my-repos').css('display', 'none').html(buf.join('')).show('slow');
   });
