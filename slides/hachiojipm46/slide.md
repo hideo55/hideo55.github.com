@@ -71,7 +71,7 @@ RET
 package popcount
 func havePOPCNT() bool
 func popcnt64ASM(x uint64) uint64
-var asn = havePOPCNT()
+var asm = havePOPCNT()
 func popcnt64(x uint64) uint64 {
     if asm {
         return popcnt64ASM(x)
@@ -82,7 +82,8 @@ func popcnt64(x uint64) uint64 {
 
 ---
 # Goでアセンブリ
-.sファイルにアセンブリを書く
+* .sファイルにアセンブリを書く
+* POPCNTのニーモニックはサポートされてないのでBYTEで機械語のバイト列を書く
 
 ```
 // func popcnt64ASM(x uint64) uint64
