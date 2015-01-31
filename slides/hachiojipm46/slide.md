@@ -114,4 +114,7 @@ func popcnt64(x uint64) uint64 {
 }
 ```
 
+---
+# go-popcount
+### https://github.com/hideo55/go-popcount
 
