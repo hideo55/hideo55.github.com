@@ -7,6 +7,11 @@
 ### A.K.A. hide\_o\_55 / hideo55
 ### Perl / C++ / Node.js / Go
 ---
+# 宣伝
+### WEB+DB Press vol.85 「Perl Hackers Hub」に
+###「Perlで自然言語処理入門」を寄稿してます。
+
+---
 ## Go書いてたら、
 ## いつのまにかasm書いてた話
 ---
