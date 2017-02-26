@@ -15,7 +15,7 @@
 
 # 前提
 
-* Vimer
+* Vimmer
 
 ---
 # Vim
